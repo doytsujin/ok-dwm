@@ -35,6 +35,11 @@ dist: clean
 	tar -cf dwm-${VERSION}.tar dwm-${VERSION}
 	gzip dwm-${VERSION}.tar
 	rm -rf dwm-${VERSION}
+	
+install-xsessions:
+	mkdir -p /usr/share/xsessions
+	cp -f dwm.desktop /usr/share/xsessions
+	chmod 644 /usr/share/xsessions/dwm.desktop
 
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
